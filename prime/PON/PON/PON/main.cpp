@@ -70,7 +70,7 @@ int main() {
 //            cout << "YES" << endl;
 //        else cout << "NO" << endl;
 //    }
-    for (ll i = 1; i <= 1000; ++i)
+    for (ll i = 1; i <= 10000000; ++i)
         if (isPrime(i)) {
             ++t;
             cout << i << endl;
