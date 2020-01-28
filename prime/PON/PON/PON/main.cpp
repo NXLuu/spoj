@@ -20,15 +20,12 @@ ll modulo(ll x, ll y, ll p) {
         return modMul(temp, temp, p);
         else return modMul(modMul(temp, temp, p), x, p);
 }
-
-
-
 bool millerTest(ll d, ll n,ll a) {
     ll x = modulo(a, d, n);
     if (x == 1 || x == n - 1)
         return true;
     while (d != n - 1) {
-        x = (x * x) % n;
+        x = modMul(x, x, n);
         d *= 2;
         if (x == 1)
             return false;
@@ -61,20 +58,14 @@ bool isPrime(ll n) {
 }
 
 int main() {
-    ll t = 0;
-//    cin >> t;
-//    while(t--) {
-//        ll n;
-//        cin >> n;
-//        if (isPrime(n))
-//            cout << "YES" << endl;
-//        else cout << "NO" << endl;
-//    }
-    for (ll i = 1; i <= 10000000; ++i)
-        if (isPrime(i)) {
-            ++t;
-            cout << i << endl;
-        }
-    cout << t;
+    ll t;
+    cin >> t;
+    while(t--) {
+        ll n;
+        cin >> n;
+        if (isPrime(n))
+            cout << "YES" << endl;
+        else cout << "NO" << endl;
+    }
     return 0;
 }
